@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text2Visual</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Icon CDN -->
+    <script src="https://kit.fontawesome.com/f6f8f493f3.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<body>
+  <div class="container">
+    <h1 id="logo">Text2Visual</h1>
+    <p>Transform Your Words into Stunning Visuals - AI-Powered Creativity at Your Fingertips!</p>
+    
+    <div class="input-container">
+        <input type="text" id="prompt" placeholder="Think it, type it, see it!" required/>
+        <button id="generateBtn">Generate</button>
+    </div>
+    <!-- Loader -->
+    <div id="loading" style="display:none;">
+        <div class="spinner"></div>
+    </div>
+    <div class="output-container" id="output-container">
+        <h2>Generated Image</h2>
+        <div class="image-wrapper">
+            <img src="" alt="Generated Visual" id="generated-image"/>
+            <a href="" target="_blank" class="view-link" id="view-link">
+                <i class="fa-solid fa-arrow-up-right-from-square view-icon"></i>
+            </a>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
