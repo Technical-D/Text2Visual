@@ -13,8 +13,10 @@ $("#generateBtn").on("click", function(event) {
         data: JSON.stringify({ "prompt": prompt }),
         success: function(response) {
             if (response.image_url) {
-                $("#generated-image").attr("src", response.image_url);
-                $("#view-link").attr("href", response.image_url);
+                var timestamp = new Date().getTime();
+                var newImageUrl = response.image_url + "?t=" + timestamp;
+                $("#generated-image").attr("src", newImageUrl);
+                $("#view-link").attr("href", newImageUrl);
                 $("#loading").css("display", "none");
                 $("#output-container").css("display", "block");
             } else {
